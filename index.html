@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/globe.png">
+    <!-- <script defer src="script.js"></script> -->
+
+    <title>History Today</title>
+</head>
+
+<body>
+
+    <main>
+        <section class="hero-section">
+
+            <div class="control-container container">
+                <h1 class="heading-primary">History On This Day</h1>
+                <div class="date-container">Today is <span class="date-month"></span> <span class="date-day"></span>,
+                    <span class="date-year"></span>
+                </div>
+                <div class="btn-container">
+                    <button class="btn selected">Selected events</button>
+                    <button class="btn births">Who was born today?</button>
+                    <button class="btn deaths">Who died today?</button>
+                    <button class="btn events">What happened today?</button>
+                    <button class="btn holidays">Any holidays?</button>
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <section class="section-content container">
+            <div class="content-header">
+                <h2 class="content-description heading-secondary"><span class="count"></span> Hi there, choose a topic
+                </h2>
+                <form action="" class="form count-control inactive">
+                    <label for="quantity" class="form-input">Check out:</label>
+                    number
+                    <div class="number-control">
+                        <input type="number" id="quantity" name="quantity" min="1" max="500"
+                            class="form-input number-input_1">
+                    </div>
+
+                    (and the following 5 others)
+                    <button class="btn-submit form-input" type="button">Submit</button>
+                </form>
+            </div>
+
+
+            <div class=" render-container">
+
+
+
+
+
+            </div>
+
+        </section>
+
+
+
+
+    </main>
+
+
+
+
+    <script type='text/javascript' src='config.js'></script>
+    <script type='text/javascript' src='script.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+
+</html>
