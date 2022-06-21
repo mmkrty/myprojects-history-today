@@ -94,7 +94,7 @@ img {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin: 5rem 0 10rem 0;
+  /* margin: 5rem 0 10rem 0; */
 }
 
 /* card */
@@ -242,4 +242,158 @@ img {
 /* utility */
 .inactive {
   display: none;
+}
+
+/* media queries */
+
+@media only screen and (min-width: 1600px) {
+  .container {
+    max-width: 150rem;
+    margin: 0 auto;
+  }
+
+  .card {
+    max-width: 20%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    max-width: 100rem;
+    margin: 0 auto;
+  }
+
+  .heading-primary {
+    font-size: 6rem;
+  }
+
+  .heading-secondary {
+    font-size: 3rem;
+    margin: 0.5rem 0;
+  }
+
+  .date-container {
+    font-size: 2.5rem;
+  }
+
+  .btn-container {
+    margin-top: 1rem;
+  }
+
+  .hero-section::before {
+    top: 25%;
+  }
+
+  .card {
+    max-width: 45%;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .container {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+  .card {
+    max-width: 45%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    max-width: 70rem;
+    margin: 0 auto;
+  }
+
+  .render-container {
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    margin: 0;
+  }
+
+  .card {
+    max-width: 80%;
+    flex: 1;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    max-width: 70rem;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .hero-section::before {
+    top: 10%;
+    height: 80%;
+  }
+
+  .control-container {
+    text-align: center;
+  }
+
+  .btn-container {
+    justify-content: center;
+    margin: 2rem 2rem 0 2rem;
+  }
+
+  .content-header {
+    margin-top: 2rem;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .hero-section::before {
+    top: 10%;
+    height: 80%;
+  }
+
+  .heading-primary {
+    font-size: 4.5rem;
+  }
+
+  .heading-secondary {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+  }
+
+  .content-header {
+    font-size: 1.5rem;
+    margin: 2rem 1rem 0 1rem;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .card {
+    max-width: 90%;
+    flex: 1;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .card__title-large {
+    font-size: 2.2rem;
+  }
+
+  .card__title-medium {
+    font-size: 1.8rem;
+  }
+
+  .card__subtitle-large {
+    font-size: 1.8rem;
+  }
+
+  .card__subtitle-medium {
+    font-size: 1.5rem;
+  }
 }
