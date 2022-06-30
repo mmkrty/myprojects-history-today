@@ -9,12 +9,12 @@ This is a simple web app which presents datas concerning "today in history." The
 - People who were born this day in history
 - People who died this day in history
 - Major Events happened this day in history
-- Holidays today
+- Holidays on this day
 - Selected major events
 
 By clicking on the button for each category, the datas will be renderd to the website, each in a card component.
 
-It also shows the total amount of items for each category. By default, the app renders the first six items in the selected collection.The user can choose which one he/she likes to check out by entering the number in the input form provided.
+It also shows the total amount of items for each category. By default, the app renders the first six items in the selected collection. The user can choose which one he/she likes to check out by entering the number in the input form provided.
 
 [Try Now](https://mmkrty.github.io/myprojects-history-today/)
 
