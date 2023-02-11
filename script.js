@@ -16,6 +16,14 @@ const countForm = document.querySelector(".count-control");
 const submitBtn = document.querySelector(".btn-submit");
 const count = document.querySelectorAll(".count");
 
+const paginationContainer = document.getElementById("paginationContainer");
+const previousPage = document.getElementById("previousPage");
+const nextPage = document.getElementById("nextPage");
+const pageNumber = document.getElementById("pageNumber");
+
+let currentPage = 1;
+const dataPerPage = 8; // number of data to show per page
+
 let firstItem;
 let typeNow;
 
