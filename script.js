@@ -252,17 +252,25 @@ const loadTarget = function (data, type) {
   }
 };
 
-const init = async function (type, num) {
+// let data;
+
+// async function getData() {
+//   const res = await axios.get(endpoint, headers);
+//   console.log(res.data);
+//   data = res.data;
+// }
+
+const init = async function (type) {
   const res = await axios.get(endpoint, headers);
   console.log(res.data);
   const data = res.data;
 
   let savedData;
   let dataLength = loadLength(data, type);
-  let startingItem = num - 1;
+  let startingItem = 0;
 
   let lastItem =
-    dataLength >= startingItem + 5 ? startingItem + 5 : dataLength - 1;
+    dataLength >= startingItem + 6 ? startingItem + 6 : dataLength - 1;
 
   // console.log(startingItem);
   // console.log(lastItem);
@@ -335,27 +343,27 @@ btnSelected.addEventListener("click", function () {
   clearContainer();
   createEndpoint("en", "selected");
 
-  init("selected", 1);
+  init("selected");
 });
 btnBirths.addEventListener("click", function () {
   clearContainer();
   createEndpoint("en", "births");
-  init("births", 1);
+  init("births");
 });
 btnDeaths.addEventListener("click", function () {
   clearContainer();
   createEndpoint("en", "deaths");
-  init("deaths", 1);
+  init("deaths");
 });
 btnEvents.addEventListener("click", function () {
   clearContainer();
   createEndpoint("en", "events");
-  init("events", 1);
+  init("events");
 });
 btnHolidays.addEventListener("click", function () {
   clearContainer();
   createEndpoint("en", "holidays");
-  init("holidays", 1);
+  init("holidays");
 });
 
 submitBtn.addEventListener("click", function (e) {
