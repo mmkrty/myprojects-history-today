@@ -110,6 +110,7 @@ showDate();
 //adding eventlistners
 btnSelected.addEventListener("click", function () {
   currentType = "selected";
+  currentPage = 1;
   createEndpoint("en", currentType);
   getData().then(() => {
     renderData();
@@ -118,6 +119,7 @@ btnSelected.addEventListener("click", function () {
 });
 btnBirths.addEventListener("click", function () {
   currentType = "births";
+  currentPage = 1;
   createEndpoint("en", currentType);
   getData().then(() => {
     renderData();
@@ -126,6 +128,7 @@ btnBirths.addEventListener("click", function () {
 });
 btnDeaths.addEventListener("click", function () {
   currentType = "deaths";
+  currentPage = 1;
   createEndpoint("en", currentType);
   getData().then(() => {
     renderData();
@@ -134,6 +137,7 @@ btnDeaths.addEventListener("click", function () {
 });
 btnEvents.addEventListener("click", function () {
   currentType = "events";
+  currentPage = 1;
   createEndpoint("en", currentType);
   getData().then(() => {
     renderData();
@@ -142,6 +146,7 @@ btnEvents.addEventListener("click", function () {
 });
 btnHolidays.addEventListener("click", function () {
   currentType = "holidays";
+  currentPage = 1;
   createEndpoint("en", currentType);
   getData().then(() => {
     renderData();
