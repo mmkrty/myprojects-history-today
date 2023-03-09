@@ -104,7 +104,7 @@ const renderHeader = function (type, length) {
       break;
 
     case "events":
-      contentDes.innerHTML = `<span class="count">${length}</span> things happened today in history.`;
+      contentDes.innerHTML = `<span class="count">${length}</span> events in history today.`;
       break;
     case "holidays":
       contentDes.innerHTML = `<span class="count">${length}</span> holidays today in history.`;
@@ -118,10 +118,12 @@ const renderHeader = function (type, length) {
 
 //paginization
 function handlePagination(event) {
+  paginationContainer.classList.remove("inactive");
   if (event.target.id === "previousPage" && currentPage > 1) {
     currentPage--;
     console.log(currentPage);
     renderData();
+    renderPages();
   } else if (
     event.target.id === "nextPage" &&
     currentPage < Math.ceil(data[currentType].length / dataPerPage)
@@ -129,11 +131,13 @@ function handlePagination(event) {
     currentPage++;
     console.log(currentPage);
     renderData();
+    renderPages();
   }
 }
 
 function renderPages() {
   // Dynamically create pagination buttons
+  paginationContainer.classList.remove("inactive");
   const numPages = Math.ceil(data[currentType].length / dataPerPage);
   const pagesContainer = document.querySelector("#pagesContainer");
   pagesContainer.innerHTML = "";
