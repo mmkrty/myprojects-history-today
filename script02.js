@@ -2,11 +2,14 @@ const showYear = document.querySelector(".date-year");
 const showMonth = document.querySelector(".date-month");
 const showDay = document.querySelector(".date-day");
 
+const contentDes = document.querySelector(".content-description");
+const count = document.querySelectorAll(".count");
+
 const renderContainer = document.querySelector(".render-container");
 const paginationContainer = document.getElementById("paginationContainer");
 const previousPage = document.getElementById("previousPage");
 const nextPage = document.getElementById("nextPage");
-const pageNumber = document.getElementById("pageNumber");
+const pagesContainer = document.getElementById("pagesContainer");
 
 const btnSelected = document.querySelector(".selected");
 const btnBirths = document.querySelector(".births");
@@ -89,6 +92,30 @@ function renderData() {
   }
 }
 
+//render header
+const renderHeader = function (type, length) {
+  switch (type) {
+    case "births":
+      contentDes.innerHTML = `<span class="count">${length}</span> people were born today in history.`;
+      break;
+
+    case "deaths":
+      contentDes.innerHTML = `<span class="count">${length}</span> people died today in history.`;
+      break;
+
+    case "events":
+      contentDes.innerHTML = `<span class="count">${length}</span> things happened today in history.`;
+      break;
+    case "holidays":
+      contentDes.innerHTML = `<span class="count">${length}</span> holidays today in history.`;
+      break;
+
+    case "selected":
+      contentDes.innerHTML = `<span class="count">${length}</span> selected events in history for you. `;
+      break;
+  }
+};
+
 //paginization
 function handlePagination(event) {
   if (event.target.id === "previousPage" && currentPage > 1) {
@@ -103,7 +130,33 @@ function handlePagination(event) {
     console.log(currentPage);
     renderData();
   }
-  pageNumber.innerHTML = currentPage;
+}
+
+function renderPages() {
+  // Dynamically create pagination buttons
+  const numPages = Math.ceil(data[currentType].length / dataPerPage);
+  const pagesContainer = document.querySelector("#pagesContainer");
+  pagesContainer.innerHTML = "";
+  for (let i = 1; i <= numPages; i++) {
+    const pageBtn = document.createElement("button");
+    pageBtn.classList.add("pageBtn");
+    pageBtn.textContent = i;
+    if (i === currentPage) {
+      pageBtn.classList.add("active");
+    }
+    pagesContainer.appendChild(pageBtn);
+  }
+  // Add an event listener to the page buttons
+  const pageBtns = document.querySelectorAll(".pageBtn");
+  pageBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      currentPage = parseInt(btn.textContent);
+      console.log(currentPage);
+      renderData();
+    });
+  });
+
+  console.log("rendered", currentType);
 }
 
 showDate();
@@ -114,6 +167,8 @@ btnSelected.addEventListener("click", function () {
   createEndpoint("en", currentType);
   getData().then(() => {
     renderData();
+    renderHeader(currentType, data[currentType].length);
+    renderPages();
     paginationContainer.addEventListener("click", handlePagination);
   });
 });
@@ -123,6 +178,8 @@ btnBirths.addEventListener("click", function () {
   createEndpoint("en", currentType);
   getData().then(() => {
     renderData();
+    renderHeader(currentType, data[currentType].length);
+    renderPages();
     paginationContainer.addEventListener("click", handlePagination);
   });
 });
@@ -132,6 +189,8 @@ btnDeaths.addEventListener("click", function () {
   createEndpoint("en", currentType);
   getData().then(() => {
     renderData();
+    renderHeader(currentType, data[currentType].length);
+    renderPages();
     paginationContainer.addEventListener("click", handlePagination);
   });
 });
@@ -141,6 +200,8 @@ btnEvents.addEventListener("click", function () {
   createEndpoint("en", currentType);
   getData().then(() => {
     renderData();
+    renderHeader(currentType, data[currentType].length);
+    renderPages();
     paginationContainer.addEventListener("click", handlePagination);
   });
 });
@@ -150,6 +211,8 @@ btnHolidays.addEventListener("click", function () {
   createEndpoint("en", currentType);
   getData().then(() => {
     renderData();
+    renderHeader(currentType, data[currentType].length);
+    renderPages();
     paginationContainer.addEventListener("click", handlePagination);
   });
 });
