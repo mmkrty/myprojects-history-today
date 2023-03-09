@@ -169,6 +169,7 @@ btnSelected.addEventListener("click", function () {
   currentType = "selected";
   currentPage = 1;
   createEndpoint("en", currentType);
+  renderContainer.innerHTML = "<p>Loading...</p>";
   getData().then(() => {
     renderData();
     renderHeader(currentType, data[currentType].length);
@@ -180,6 +181,7 @@ btnBirths.addEventListener("click", function () {
   currentType = "births";
   currentPage = 1;
   createEndpoint("en", currentType);
+  renderContainer.innerHTML = "<p>Loading...</p>";
   getData().then(() => {
     renderData();
     renderHeader(currentType, data[currentType].length);
@@ -191,6 +193,7 @@ btnDeaths.addEventListener("click", function () {
   currentType = "deaths";
   currentPage = 1;
   createEndpoint("en", currentType);
+  renderContainer.innerHTML = "<p>Loading...</p>";
   getData().then(() => {
     renderData();
     renderHeader(currentType, data[currentType].length);
@@ -202,6 +205,7 @@ btnEvents.addEventListener("click", function () {
   currentType = "events";
   currentPage = 1;
   createEndpoint("en", currentType);
+  renderContainer.innerHTML = "<p>Loading...</p>";
   getData().then(() => {
     renderData();
     renderHeader(currentType, data[currentType].length);
@@ -213,6 +217,7 @@ btnHolidays.addEventListener("click", function () {
   currentType = "holidays";
   currentPage = 1;
   createEndpoint("en", currentType);
+  renderContainer.innerHTML = "<p>Loading...</p>";
   getData().then(() => {
     renderData();
     renderHeader(currentType, data[currentType].length);

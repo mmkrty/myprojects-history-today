@@ -109,6 +109,11 @@ button {
   /* margin: 5rem 0 10rem 0; */
 }
 
+.render-container > p {
+  font-family: "Public Sans", sans-serif;
+  font-size: 2rem;
+}
+
 /* card */
 .card {
   box-shadow: 0 0.2rem 1.5rem rgba(0, 0, 0, 0.2);
